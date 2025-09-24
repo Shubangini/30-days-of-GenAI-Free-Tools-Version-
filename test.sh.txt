@@ -1,19 +1,30 @@
-# Top-level files
+#!/bin/bash
+
+# --- Top-level files ---
 touch README.md LICENSE CONTRIBUTING.md template-journal.md
 
-# Resources
+# --- Resources ---
 mkdir -p resources/code-templates
 touch resources/datasets.md resources/reading-list.md resources/troubleshooting.md
+touch resources/.placeholder resources/code-templates/.placeholder
 
-# Weeks and Days
+# --- Weeks and Days ---
 for w in {1..4}; do
   mkdir -p Week$w
+  touch Week$w/.placeholder
   d1=$(( (w-1)*7 + 1 ))
   d2=$(( w*7 ))
   for d in $(seq -w $d1 $d2); do
     mkdir -p Week$w/Day$d
+    touch Week$w/Day$d/.placeholder
   done
 done
 
-# Capstone
+# --- Capstone ---
 mkdir -p Capstone/Day29 Capstone/Day30 Capstone/project-templates
+touch Capstone/.placeholder \
+      Capstone/Day29/.placeholder \
+      Capstone/Day30/.placeholder \
+      Capstone/project-templates/.placeholder
+
+echo "✅ Repo structure created with .placeholder files in all folders."
