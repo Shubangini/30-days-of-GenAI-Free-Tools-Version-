@@ -1,0 +1,19 @@
+# Top-level files
+touch README.md LICENSE CONTRIBUTING.md template-journal.md
+
+# Resources
+mkdir -p resources/code-templates
+touch resources/datasets.md resources/reading-list.md resources/troubleshooting.md
+
+# Weeks and Days
+for w in {1..4}; do
+  mkdir -p Week$w
+  d1=$(( (w-1)*7 + 1 ))
+  d2=$(( w*7 ))
+  for d in $(seq -w $d1 $d2); do
+    mkdir -p Week$w/Day$d
+  done
+done
+
+# Capstone
+mkdir -p Capstone/Day29 Capstone/Day30 Capstone/project-templates
